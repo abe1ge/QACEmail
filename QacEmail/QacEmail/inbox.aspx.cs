@@ -38,7 +38,7 @@ namespace QacEmail
             String from, subj, txt, date;
             int id;
 
-            table.InnerHtml += "<table>";
+            table.InnerHtml += "<table border='1'>";
             while (rdr.Read())
             {
                 id = Convert.ToInt32(rdr["email"]);
@@ -48,8 +48,8 @@ namespace QacEmail
 
                 table.InnerHtml += "<tr>";
                 table.InnerHtml += "<td> From: " + from + "</td>";
-                table.InnerHtml += "<td href='mail.aspx?id=" + id + "'>" + subj + "</td>";
-                table.InnerHtml += "<td>" + date + "</td>";
+                table.InnerHtml += "<td> Subject: <a href='mail.aspx?id=" + id + "'>" + subj + "</a></td>";
+                table.InnerHtml += "<td> Date: " + date + "</td>";
                 table.InnerHtml += "</tr>";
             }
             table.InnerHtml += "</table>";
