@@ -30,7 +30,30 @@ namespace QacEmail
 
         public void inbox_load()
         {
+            String email = Session["login"].ToString();
 
+            cmd.CommandText = "SELECT * FROM emails WHERE mailTo='" + email + "'";
+            rdr = cmd.ExecuteReader();
+
+            String from, subj, txt, date;
+            int id;
+
+            table.InnerHtml += "<table>";
+            while (rdr.Read())
+            {
+                id = Convert.ToInt32(rdr["email"]);
+                from = rdr["mailFrom"].ToString();
+                subj = rdr["subj"].ToString();
+                date = rdr["mailDate"].ToString();
+
+                table.InnerHtml += "<tr>";
+                table.InnerHtml += "<td> From: " + from + "</td>";
+                table.InnerHtml += "<td href='mail.aspx?id=" + id + "'>" + subj + "</td>";
+                table.InnerHtml += "<td>" + date + "</td>";
+                table.InnerHtml += "</tr>";
+            }
+            table.InnerHtml += "</table>";
+            rdr.Close();
         }
     }
 }
