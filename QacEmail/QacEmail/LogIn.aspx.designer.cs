@@ -10,7 +10,7 @@
 namespace QacEmail {
     
     
-    public partial class WebForm1 {
+    public partial class LogIn {
         
         /// <summary>
         /// form1 control.
@@ -38,6 +38,15 @@ namespace QacEmail {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxPassword;
+        
+        /// <summary>
+        /// lb_log_error control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lb_log_error;
         
         /// <summary>
         /// ButtonLogIn control.

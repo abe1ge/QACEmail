@@ -98,6 +98,7 @@
     <Content Include="App_Data\qac_log.ldf">
       <DependentUpon>qac.mdf</DependentUpon>
     </Content>
+    <Content Include="inbox.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -150,6 +151,13 @@
     </Compile>
     <Compile Include="ForgotPassword.aspx.designer.cs">
       <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="inbox.aspx.cs">
+      <DependentUpon>inbox.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="inbox.aspx.designer.cs">
+      <DependentUpon>inbox.aspx</DependentUpon>
     </Compile>
     <Compile Include="LogIn.aspx.cs">
       <DependentUpon>LogIn.aspx</DependentUpon>
