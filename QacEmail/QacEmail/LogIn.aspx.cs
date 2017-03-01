@@ -47,10 +47,7 @@ namespace QacEmail
                 lb_log_error.Text = "Invalid username or password";
             }
         }
-
-        protected void CheckBoxRemeberPassword_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
+        
+        
     }
 }
