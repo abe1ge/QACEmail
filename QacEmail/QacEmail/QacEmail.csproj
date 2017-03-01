@@ -99,6 +99,7 @@
       <DependentUpon>qac.mdf</DependentUpon>
     </Content>
     <Content Include="inbox.aspx" />
+    <Content Include="NewMail.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -112,7 +113,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Compose.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -138,13 +138,6 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Compose.aspx.cs">
-      <DependentUpon>Compose.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Compose.aspx.designer.cs">
-      <DependentUpon>Compose.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ForgotPassword.aspx.cs">
       <DependentUpon>ForgotPassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -165,6 +158,13 @@
     </Compile>
     <Compile Include="LogIn.aspx.designer.cs">
       <DependentUpon>LogIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NewMail.aspx.cs">
+      <DependentUpon>NewMail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewMail.aspx.designer.cs">
+      <DependentUpon>NewMail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Regester.aspx.cs">
