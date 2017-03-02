@@ -4,8 +4,8 @@
 <form id="form1" runat="server">
     <div>
     <br />
-        Email :<asp:TextBox ID="TextBoxEmail" runat="server"></asp:TextBox> <br />
-        Password :<asp:TextBox ID="TextBoxPassword" runat="server" Type="password"></asp:TextBox><br />
+        Email: <asp:TextBox ID="TextBoxEmail" runat="server"></asp:TextBox> <br />
+        Password: <asp:TextBox ID="TextBoxPassword" runat="server" Type="password"></asp:TextBox><br />
         <asp:Label ID="lb_log_error" runat="server" Text=""></asp:Label><br />
         <asp:Button ID="ButtonLogIn" runat="server" Text="Log In" OnClick="ButtonLogIn_Click" />
         

@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <form id="inbox" runat="server">
         <asp:Button ID="btn_del" runat="server" Text="Delete" OnClick="btn_del_Click" />
+        <asp:Button ID="btn_logout" runat="server" Text="Log out" OnClick="btn_logout_Click" />
         <br />
 
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString='<%$ ConnectionStrings:InboxConnectionString %>' SelectCommand="SELECT [email], [mailFrom], [subj], [mailDate] FROM [emails] ORDER BY [mailDate] DESC"></asp:SqlDataSource>

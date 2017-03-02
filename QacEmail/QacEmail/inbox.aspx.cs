@@ -69,5 +69,11 @@ namespace QacEmail
         {
             
         }
+
+        protected void btn_logout_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("LogIn.aspx");
+        }
     }
 }
