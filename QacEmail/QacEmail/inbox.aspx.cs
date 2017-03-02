@@ -27,7 +27,9 @@ namespace QacEmail
             con.Open();
             cmd.Connection = con;
 
-            inbox_load();
+            String email = Session["login"].ToString();
+            SqlDataSource1.SelectCommand = "SELECT * FROM emails WHERE mailTo='" + email + "' AND deleted = 'n' ORDER BY mailDate DESC";
+            //inbox_load();
         }
 
         public void inbox_load()

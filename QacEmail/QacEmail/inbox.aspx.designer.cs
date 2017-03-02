@@ -22,21 +22,21 @@ namespace QacEmail {
         protected global::System.Web.UI.WebControls.Button btn_del;
         
         /// <summary>
-        /// btn_com control.
+        /// SqlDataSource1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_com;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
         
         /// <summary>
-        /// inbox_grid control.
+        /// GridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView inbox_grid;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
     }
 }

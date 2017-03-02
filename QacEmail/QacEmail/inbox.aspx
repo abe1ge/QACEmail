@@ -2,13 +2,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <form id="inbox" runat="server">
         <asp:Button ID="btn_del" runat="server" Text="Delete" OnClick="btn_del_Click" />
-        <asp:Button ID="btn_com" runat="server" Text="Compose" />
-        <asp:GridView ID="inbox_grid" runat="server">
+        <br />
+
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString='<%$ ConnectionStrings:InboxConnectionString %>' SelectCommand="SELECT [email], [mailFrom], [subj], [mailDate] FROM [emails] ORDER BY [mailDate] DESC"></asp:SqlDataSource>
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="email" DataSourceID="SqlDataSource1">
             <Columns>
-                <asp:CheckBoxField />
-                <asp:BoundField DataField="mailFrom" HeaderText="From" SortExpression="mailFrom" ReadOnly="True" />
-                <asp:BoundField DataField="subj" HeaderText="Subject" SortExpression="subj" />
-                <asp:BoundField DataField="mailDate" HeaderText="Date" SortExpression="mailDate" ReadOnly="True" />
+                <asp:BoundField DataField="mailFrom" HeaderText="mailFrom" SortExpression="mailFrom"></asp:BoundField>
+                <asp:BoundField DataField="subj" HeaderText="subj" SortExpression="subj"></asp:BoundField>
+                <asp:BoundField DataField="mailDate" HeaderText="mailDate" SortExpression="mailDate"></asp:BoundField>
             </Columns>
         </asp:GridView>
     </form>
