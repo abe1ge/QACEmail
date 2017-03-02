@@ -12,14 +12,13 @@ namespace QacEmail
     {
         SqlCommand cmd;
         SqlConnection con;
-        SqlDataReader rdr;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["login"] != null)
                 Response.Redirect("inbox.aspx");
-            //Session["conString"] = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Administrator\\Documents\\abel\\projects\\Github\\QACEmail\\QacEmail\\QacEmail\\App_Data\\qac.mdf;Integrated Security=True";
-            Session["conString"] = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Administrator\\Documents\\GitHub\\QACEmail\\QacEmail\\QacEmail\\App_Data\\qac.mdf;Integrated Security=True";
+            Session["conString"] = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Administrator\\Documents\\abel\\projects\\Github\\QACEmail\\QacEmail\\QacEmail\\App_Data\\qac.mdf;Integrated Security=True";
+            //Session["conString"] = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Administrator\\Documents\\GitHub\\QACEmail\\QacEmail\\QacEmail\\App_Data\\qac.mdf;Integrated Security=True";
             con = new SqlConnection(Session["conString"].ToString());
             cmd = new SqlCommand();
             
@@ -32,25 +31,23 @@ namespace QacEmail
             String usr = TextBoxEmail.Text;
             String pwd = TextBoxPassword.Text;
 
-            
+
             cmd.CommandText = "SELECT * FROM login WHERE email='" + usr + "' AND pwd='" + pwd + "'";
-            rdr = cmd.ExecuteReader();
-            if (rdr.Read())
-            {
-                
-                Session["login"] = rdr["email"].ToString();
-                
-                Response.Redirect("inbox.aspx");
-            }
-            else
-            {
-                lb_log_error.Text = "Invalid username or password";
-            }
-        }
 
-        protected void CheckBoxRemeberPassword_CheckedChanged(object sender, EventArgs e)
-        {
+            using (SqlDataReader rdr = cmd.ExecuteReader())
+            {
+                if (rdr.Read())
+                {
 
+                    Session["login"] = rdr["email"].ToString();
+                    rdr.Close();
+                    Response.Redirect("inbox.aspx");
+                }
+                else
+                {
+                    lb_log_error.Text = "Invalid username or password";
+                }
+            }
         }
     }
 }

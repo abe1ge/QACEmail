@@ -10,8 +10,8 @@
         <asp:Button ID="ButtonLogIn" runat="server" Text="Log In" OnClick="ButtonLogIn_Click" />
         
         <br />
-        Rember Password : <asp:CheckBox ID="CheckBoxRemeberPassword" runat="server" OnCheckedChanged="CheckBoxRemeberPassword_CheckedChanged" /> <br />
-        <asp:HyperLink ID="HyperLink1" runat="server">Forgot Password</asp:HyperLink>
+        Rember Password : <asp:CheckBox ID="CheckBoxRemeberPassword" runat="server" /> <br />
+        <a href="ForgotPassword.aspx">Forgot Password</a>
     </form>
 </asp:Content>
 
