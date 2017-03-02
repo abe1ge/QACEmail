@@ -135,6 +135,8 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="StyleSheetGreen.css" />
+    <Content Include="StyleSheetBlue.css" />
     <Content Include="StyleSheetYellow.css" />
     <Content Include="StyleSheetRed.css" />
     <Content Include="viewMail.aspx" />
