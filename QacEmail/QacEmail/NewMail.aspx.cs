@@ -12,7 +12,6 @@ namespace QacEmail
     {
         SqlCommand cmd;
         SqlConnection con;
-        SqlDataReader rdr;
 
         protected List<string> error = new List<string>();
 
