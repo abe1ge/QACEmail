@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/page.Master" AutoEventWireup="true" CodeBehind="inbox.aspx.cs" Inherits="QacEmail.inbox" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/pow.Master" AutoEventWireup="true" CodeBehind="inbox.aspx.cs" Inherits="QacEmail.inbox" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <form id="inbox" runat="server">
         <asp:Button ID="btn_del" runat="server" Text="Delete" OnClick="btn_del_Click" />

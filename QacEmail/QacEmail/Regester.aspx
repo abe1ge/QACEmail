@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/page.Master" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="QacEmail.WebForm1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/pow.Master" AutoEventWireup="true" CodeBehind="Regester.aspx.cs" Inherits="QacEmail.Regester" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
   <form id="form1" runat="server">
     <div>
