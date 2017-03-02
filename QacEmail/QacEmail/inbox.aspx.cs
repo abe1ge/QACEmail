@@ -14,6 +14,8 @@ namespace QacEmail
         SqlConnection con;
         SqlDataReader rdr;
 
+        List<string> checks = new List<string>();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["login"] == null)
@@ -35,10 +37,12 @@ namespace QacEmail
             cmd.CommandText = "SELECT * FROM emails WHERE mailTo='" + email + "'";
             rdr = cmd.ExecuteReader();
 
-            String from, subj, txt, date;
+            String from, subj, date;
             int id;
 
+            /*
             table.InnerHtml += "<table border='1'>";
+            int count = 0;
             while (rdr.Read())
             {
                 id = Convert.ToInt32(rdr["email"]);
@@ -47,13 +51,21 @@ namespace QacEmail
                 date = rdr["mailDate"].ToString();
 
                 table.InnerHtml += "<tr>";
+                table.InnerHtml += "<td><input type='checkbox' name='" + id + "'></td>";
                 table.InnerHtml += "<td> From: " + from + "</td>";
-                table.InnerHtml += "<td> Subject: <a href='mail.aspx?id=" + id + "'>" + subj + "</a></td>";
+                table.InnerHtml += "<td> Subject: <a href='viewMail.aspx?id=" + id + "'>" + subj + "</a></td>";
                 table.InnerHtml += "<td> Date: " + date + "</td>";
                 table.InnerHtml += "</tr>";
+                checks.Add(id.ToString());
             }
             table.InnerHtml += "</table>";
             rdr.Close();
+            */
+        }
+
+        protected void btn_del_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

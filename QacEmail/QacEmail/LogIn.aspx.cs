@@ -22,7 +22,7 @@ namespace QacEmail
             Session["conString"] = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Administrator\\Documents\\GitHub\\QACEmail\\QacEmail\\QacEmail\\App_Data\\qac.mdf;Integrated Security=True";
             con = new SqlConnection(Session["conString"].ToString());
             cmd = new SqlCommand();
-
+            
             con.Open();
             cmd.Connection = con;
         }

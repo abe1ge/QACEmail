@@ -13,12 +13,30 @@ namespace QacEmail {
     public partial class inbox {
         
         /// <summary>
-        /// table control.
+        /// btn_del control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl table;
+        protected global::System.Web.UI.WebControls.Button btn_del;
+        
+        /// <summary>
+        /// btn_com control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_com;
+        
+        /// <summary>
+        /// inbox_grid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView inbox_grid;
     }
 }
