@@ -24,6 +24,19 @@ namespace QacEmail
             
             con.Open();
             cmd.Connection = con;
+
+            try
+            {
+                if (Request.Cookies["user"]["email"] != null)
+                {
+                    TextBoxEmail.Text = Request.Cookies["user"]["email"].ToString();
+                    TextBoxPassword.Text = Request.Cookies["user"]["password"].ToString();
+                }
+            } catch (Exception ex)
+            {
+                
+            }
+            
         }
 
         protected void ButtonLogIn_Click(object sender, EventArgs e)
@@ -40,6 +53,14 @@ namespace QacEmail
                 {
 
                     Session["login"] = rdr["email"].ToString();
+
+                    if (CheckBoxRemeberPassword.Checked)
+                    {
+                        Response.Cookies["user"]["email"] = rdr["email"].ToString();
+                        Response.Cookies["user"]["password"] = pwd;
+
+                    }
+
                     rdr.Close();
                     Response.Redirect("inbox.aspx");
                 }
