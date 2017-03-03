@@ -8,7 +8,7 @@
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="email" DataSourceID="SqlDataSource1">
             <Columns>
                 <asp:BoundField DataField="mailFrom" HeaderText="mailFrom" SortExpression="mailFrom"></asp:BoundField>
-                <asp:BoundField DataField="subj" HeaderText="subj" SortExpression="subj"></asp:BoundField>
+                <asp:HyperLinkField HeaderText="subject" DataTextField="subj" DataNavigateUrlFormatString="~\viewMail.aspx?Id={0}" DataNavigateUrlFields="email" />
                 <asp:BoundField DataField="mailDate" HeaderText="mailDate" SortExpression="mailDate"></asp:BoundField>
             </Columns>
         </asp:GridView>
