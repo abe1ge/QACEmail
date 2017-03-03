@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/pow.Master" AutoEventWireup="true" CodeBehind="LogIn.aspx.cs" Inherits="QacEmail.LogIn" %>
 
 <asp:Content ID="MainContent" ContentPlaceHolderID="MainContent" runat="server">
-    <form id="form1" runat="server">
+   
         <div>
             <br />
             Email :<asp:TextBox ID="TextBoxEmail" runat="server"></asp:TextBox>
@@ -16,6 +16,5 @@
             <br />
             <a href="ForgotPassword.aspx">Forgot Password</a>
         </div>
-    </form>
 </asp:Content>
 

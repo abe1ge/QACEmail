@@ -17,25 +17,28 @@ namespace QacEmail
         {
             if (Session["login"] != null)
                 Response.Redirect("inbox.aspx");
-            Session["conString"] = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Administrator\\Documents\\abel\\projects\\Github\\QACEmail\\QacEmail\\QacEmail\\App_Data\\qac.mdf;Integrated Security=True";
-            //Session["conString"] = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Administrator\\Documents\\GitHub\\QACEmail\\QacEmail\\QacEmail\\App_Data\\qac.mdf;Integrated Security=True";
+            //Session["conString"] = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Administrator\\Documents\\abel\\projects\\Github\\QACEmail\\QacEmail\\QacEmail\\App_Data\\qac.mdf;Integrated Security=True";
+            Session["conString"] = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Administrator\\Documents\\GitHub\\QACEmail\\QacEmail\\QacEmail\\App_Data\\qac.mdf;Integrated Security=True";
             con = new SqlConnection(Session["conString"].ToString());
             cmd = new SqlCommand();
             
             con.Open();
             cmd.Connection = con;
 
+            /*
             try
             {
                 if (Request.Cookies["user"]["email"] != null)
                 {
                     TextBoxEmail.Text = Request.Cookies["user"]["email"].ToString();
                     TextBoxPassword.Text = Request.Cookies["user"]["password"].ToString();
+                    CheckBoxRemeberPassword.Checked = true;
                 }
             } catch (Exception ex)
             {
                 
             }
+            */
             
         }
 
@@ -54,12 +57,19 @@ namespace QacEmail
 
                     Session["login"] = rdr["email"].ToString();
 
+                    /*
                     if (CheckBoxRemeberPassword.Checked)
                     {
                         Response.Cookies["user"]["email"] = rdr["email"].ToString();
                         Response.Cookies["user"]["password"] = pwd;
 
+                    } else
+                    {
+                        CheckBoxRemeberPassword.Checked = false;
+                        Response.Cookies["user"]["email"] = "";
+                        Response.Cookies["user"]["password"] = "";
                     }
+                    */
 
                     rdr.Close();
                     Response.Redirect("inbox.aspx");
